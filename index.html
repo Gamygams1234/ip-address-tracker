@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | IP Address Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+</head>
+
+<body>
+  <div class="body">
+    <header class="padding-container">
+      <div class="content">
+        <h1 class="fw-500"> IP Address Tracker</h1>
+
+        <form id="main-form" class="map-form">
+          <input class="form-input" type="text" id="map-input" name="input"
+            placeholder="Search for any IP address or domain">
+          <input class="form-button" type="submit" value="">
+
+        </form>
+
+        <div class="location-info">
+          <div class="location-info-grid">
+            <div class="grid-item fw-500">
+              <h3>
+                Ip address
+              </h3>
+              <div id="ip-address" class="grid-item-info fw-700">12.23233.23232.23
+              </div>
+            </div>
+            <div class="grid-item fw-500">
+              <h3>
+                Location
+              </h3>
+              <div id="city" class="grid-item-info fw-700">Riverside, Ca 92505
+              </div>
+            </div>
+            <div class="grid-item fw-500">
+              <h3>
+                Timezone
+              </h3>
+              <div id="utc" class="grid-item-info fw-700">UTC -05:00
+              </div>
+            </div>
+            <div class="grid-item fw-500">
+              <h3>
+                ISP
+              </h3>
+              <div id="isp" class="grid-item-info fw-700">Charter
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div id="mapid"></div>
+
+  </div>
+
+
+
+
+  <script src="./scripts/scripts.js"></script>
+</body>
+
+</html>

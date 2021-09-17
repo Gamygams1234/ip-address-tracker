@@ -1,0 +1,194 @@
+$veryDarkGrey: hsl(0, 0%, 17%);
+$darkGrey: hsl(0, 0%, 59%);
+
+body {
+    font-size: 18px;
+    font-family: "Rubik", sans-serif;
+}
+.body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.fw-400 {
+    font-weight: 400;
+}
+.fw-500 {
+    font-weight: 500;
+}
+.fw-700 {
+    font-weight: 700;
+}
+
+.content {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.padding-container {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+header {
+    background-image: url(../images/pattern-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    .content {
+        position: relative;
+        padding-top: 2em;
+
+        padding-bottom: 9em;
+
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        h1 {
+            margin-bottom: 1em;
+            text-align: center;
+            font-size: 1.5em;
+        }
+
+        .map-form {
+            margin-bottom: 1em;
+            display: flex;
+            font-size: 1em;
+            width: 100%;
+            input {
+                outline: none;
+            }
+            .form-input {
+                padding: 1em 20px;
+
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 1em 0 0 1em;
+                box-sizing: border-box;
+                font-size: 1em;
+                flex-grow: 1;
+            }
+            .form-button {
+                background-color: $veryDarkGrey;
+                background-image: url(../images/icon-arrow.svg);
+                background-position: center;
+                background-size: 1em;
+                background-repeat: no-repeat;
+                color: white;
+                padding: 14px 0;
+                width: 5em;
+
+                border: none;
+                border-radius: 0 1em 1em 0;
+                cursor: pointer;
+                transition: 0.2s ease-in-out;
+            }
+            .form-button:hover {
+                background-color: $darkGrey;
+            }
+        }
+        .location-info {
+            position: absolute;
+            top: calc(100% - 9em);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            border-radius: 1em;
+            width: 100%;
+            z-index: 1000;
+
+            .location-info-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                .grid-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    padding: 1em;
+                    text-align: center;
+                    h3 {
+                        text-transform: uppercase;
+                        color: $darkGrey;
+                        font-size: 0.75em;
+                        margin-bottom: 0.75em;
+                    }
+                    .grid-item-info {
+                        color: $veryDarkGrey;
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#mapid {
+    flex-grow: 1;
+    min-height: 600px;
+    background-color: grey;
+}
+
+@media screen and (min-width: 768px) {
+    header {
+        .content {
+            padding-bottom: 4em;
+            .map-form {
+                max-width: 576px;
+            }
+            .location-info {
+                top: calc(100% - 4em);
+                .location-info-grid {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    .padding-container {
+        padding-left: 86px;
+        padding-right: 86px;
+    }
+    header {
+        .content {
+            .location-info {
+                padding-bottom: 2rem;
+                padding-top: 2rem;
+                .location-info-grid {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    .grid-item {
+                        text-align: left;
+                        align-items: flex-start;
+                        position: relative;
+                    }
+                    .grid-item:not(:first-child) {
+                        h3 {
+                            margin-left: 2rem;
+                        }
+                        .grid-item-info {
+                            margin-left: 2rem;
+                        }
+                    }
+                    .grid-item:not(:first-child)::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        border-left: 1px solid $darkGrey;
+                        -webkit-transform: translate(-50%);
+                        transform: translate(-50%);
+                    }
+                }
+            }
+        }
+    }
+}
